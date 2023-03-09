@@ -41,6 +41,11 @@ ul li{
     list-style-type: none;
 }
 
+a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+}
+
 /* Sidebar */
 
 .sidebar{
@@ -75,6 +80,10 @@ ul li{
     color: white;
 }
 
+.sidebar ul{
+    overflow: auto;
+}
+
 .sidebar .hidden-text{
     line-height: 22px;
     display: none;
@@ -87,6 +96,8 @@ ul li{
 nav .nome-playlist .fa-square-plus{
     font-size: 20px;
 }
+
+/* fixed-block */
 
 .sidebar .fixed-block{
     align-self: flex-end;
@@ -108,6 +119,7 @@ nav .nome-playlist .fa-square-plus{
 
 .sidebar .fixed-block hr{
     height: 1px;
+    width: 8rem;
     border: 0;
     background-color: rgba(255, 255, 255, 0.7);
     display: none;
@@ -127,9 +139,9 @@ nav .nome-playlist .fa-square-plus{
     width: calc(100% - 40px);
 }
 
-/* Top-box */
+/* Button-box */
 
-.main-container .top-box{
+.main-container .button-box{
     height: 70px;
     background-color: #080b12;
     display: flex;
@@ -137,7 +149,7 @@ nav .nome-playlist .fa-square-plus{
     align-items: center;
 }
 
-.top-box button{
+.button-box button{
     margin-right: 1rem;
     background-color: transparent;
     color: white;
@@ -151,8 +163,117 @@ nav .nome-playlist .fa-square-plus{
 
 .main-container .playlist-box{
     background-color: #141922;
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
 }
 
+/* Section-top */
+
+.playlist-box .section-top{
+    width: 95%;
+    margin: auto;
+}
+
+.playlist-box .section-top .text-list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.6rem;
+}
+
+.playlist-box .section-top .text-list div{   
+    margin-bottom: 0.7rem;
+    text-align: center;
+}
+
+.section-top .text-list .border-green{
+    border-bottom: 1px solid #adff2f;
+}
+
+/* Section-bottom */
+
+.playlist-box .section-bottom{
+    color: white;
+    width: 100%;
+    padding-bottom: 4rem;
+}
+
+.section-bottom h4{
+    margin: 0.8rem 0;
+}
+
+.section-bottom h6{
+    padding-top: 0.6rem;
+}
+
+.playlist-box .section-bottom .cards{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.section-bottom .cards .card{
+    flex-basis: calc(100% / 2 - 1%);
+    text-align: center;
+    margin: 0.3rem 0;
+}
+
+.section-bottom .cards .card img{
+    width: 100%;
+    display: block;
+}
+
+.section-bottom .cards .card .player{
+    position: relative;
+}
+
+.section-bottom .cards .card .overlay{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.section-bottom .cards .card .fa-circle-play{
+    font-size: 3rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: none;
+}
+
+.section-bottom span{
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Playlist-row-2 */
+
+.playlist-row-2 .h4-margin{
+    margin: 1.3rem 0 0.4rem 0;
+}
+
+.playlist-row-2 p{
+    padding-bottom: 1rem;
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.7)
+}
+
+.circular-img{
+    border-radius: 50%;
+}
 
 /* Controller */
 
@@ -160,6 +281,7 @@ nav .nome-playlist .fa-square-plus{
     height: 70px;
     width: 100%;
     background-color: #282828;
+    z-index: 4;
 }
 
 
@@ -192,19 +314,54 @@ nav .nome-playlist .fa-square-plus{
         display: block;
     }
 
+    /* Main container */
+
     .main-container{
         width: calc(100% - 150px);
+    }
+
+    .section-bottom .cards .card:hover .overlay{
+        display: block;
+    }
+
+    .section-bottom .cards .card:hover .fa-circle-play{
+        display: block;
     }
 }
 
 
 @media screen and (min-width: 480px) {
     
+    .playlist-box .section-top{
+        width: 65%;
+    }
+
+    .playlist-box .section-bottom .cards{
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
+    .section-bottom .cards .card{
+        flex-basis: calc(100% / 4 - 1%);
+    }
 }
 
 
 @media screen and (min-width: 900px) {
     
+    .playlist-box .section-bottom .cards{
+        justify-content: space-between;
+    }
+
+    .section-bottom .cards .card{
+        flex-basis: calc(100% / 6 - 1%);
+    }
+
+    .playlist-row-2 .cards.special{
+        justify-content: flex-start;
+        gap: 1%;
+    }
+
 }
 
 
