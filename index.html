@@ -74,7 +74,7 @@
                     <hr>
                     <div class="profile padding-top flex">
                         <img src="./assets/img/profile.svg" alt="">
-                        <span class="hidden-text white-text"><strong>John Doe</strong></span>
+                        <h5 class="hidden-text white-text">John Doe</h5>
                     </div>
 
                 </div>
@@ -237,7 +237,7 @@
 
                                 <div class="card">
                                     <div class="player">
-                                        <div class="overlay"></div>
+                                        <div class="overlay overlay-circle"></div>
                                         <img src="./assets/img/youg.jpeg" alt="Playlist" class="circular-img">
                                         <i class="fa-regular fa-circle-play"></i>
                                     </div>                         
@@ -246,7 +246,7 @@
                                 
                                 <div class="card">
                                     <div class="player">
-                                        <div class="overlay"></div>
+                                        <div class="overlay overlay-circle"></div>
                                         <img src="./assets/img/einaudi.jpeg" alt="Playlist" class="circular-img">
                                         <i class="fa-regular fa-circle-play"></i>
                                     </div>       
@@ -265,6 +265,45 @@
             <!-- Controller -->
 
             <div class="controller">
+
+                <div id="col-left" class="col">
+                    <img src="./assets/img/sinister.jpeg" alt="Playlist" height="30px">
+                    <div>
+                        <h6>Sinister</h6>
+                        <span class="brano-nome hover">Brano nome</span>
+                    </div>
+                    <div class="icons-left">
+                        <i class="fa-regular fa-heart hover"></i>
+                        <i class="fa-regular fa-folder hover"></i>
+                    </div>
+                </div>
+
+                <div id="col-center" class="col">
+                    <div class="icons-center">
+                        <i class="fa-solid fa-shuffle"></i>
+                        <i class="fa-solid fa-backward-step"></i>
+                        <i class="fa-regular fa-circle-play"></i>
+                        <i class="fa-solid fa-forward-step"></i>
+                        <i class="fa-solid fa-arrow-rotate-right"></i>
+                    </div>
+                    <div class="range flex">
+                        <span>0:25</span>
+                        <input type="range" class="long-bar">
+                        <span>4:35</span>
+                    </div>       
+                </div>
+
+                <div id="col-right" class="col">
+                    <div class="icons-right">
+                        <i class="fa-solid fa-list-ul"></i>
+                        <i class="fa-solid fa-display"></i>
+                    </div>
+
+                    <div class="range flex hidden-range">
+                        <i class="fa-solid fa-volume-high"></i>
+                        <input type="range">
+                    </div>      
+                </div>
 
             </div>
 
